@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2n18f6nhtb10"]
+
+[ext_resource type="Texture2D" uid="uid://cavelhru17nqo" path="res://icons8-pixel-heart-windows-11-color (2)/icons8-pixel-heart-96.png" id="1_452e1"]
+[ext_resource type="Script" uid="uid://2dxdqrj1rn2b" path="res://Scripts/HealthPickup.gd" id="1_v4aiu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v4aiu"]
+
+[node name="heart" type="Area2D"]
+script = ExtResource("1_v4aiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, 2)
+scale = Vector2(0.234375, 0.255208)
+texture = ExtResource("1_452e1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_v4aiu")
