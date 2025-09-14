@@ -1,9 +1,10 @@
-[gd_scene load_steps=64 format=3 uid="uid://bw3msf5ehxast"]
+[gd_scene load_steps=65 format=3 uid="uid://bw3msf5ehxast"]
 
 [ext_resource type="Script" uid="uid://cei4n1cn5q83j" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://b21b3d8lv2s0o" path="res://mystic_woods_free_2.2/sprites/characters/player.png" id="2_6t5aa"]
 [ext_resource type="Shader" uid="uid://cjvp0udhyc1qf" path="res://Scenes/playerhitflash.tres" id="2_vgqql"]
 [ext_resource type="Script" uid="uid://bcvgy8nyw705b" path="res://Scripts/camera_shake.gd" id="4_vgqql"]
+[ext_resource type="PackedScene" uid="uid://mr4obysiu475" path="res://Scenes/healthbar.tscn" id="5_fkybt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fkybt"]
 shader = ExtResource("2_vgqql")
@@ -476,8 +477,7 @@ script = ExtResource("1_cvnsp")
 material = SubResource("ShaderMaterial_fkybt")
 position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_pukcj")
-animation = &"Front_Attack"
-frame_progress = 0.728668
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -485,6 +485,7 @@ position = Vector2(1, -9)
 shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="Hitbox" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 visible = false
@@ -498,6 +499,7 @@ wait_time = 0.5
 wait_time = 0.3
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(2, 2)
 zoom = Vector2(4, 4)
 limit_left = 0
@@ -515,6 +517,7 @@ libraries = {
 }
 
 [node name="AttackHitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 7
 collision_mask = 2
 
@@ -532,6 +535,12 @@ limit_bottom = 520
 
 [node name="AttackCooldownTimerPlayer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="Healthbar" parent="." instance=ExtResource("5_fkybt")]
+offset_left = -8.0
+offset_top = -26.0
+offset_right = 12.0
+offset_bottom = -23.0
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]

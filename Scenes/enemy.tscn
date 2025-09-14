@@ -199,6 +199,7 @@ animation = &"Walk"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-1, -4)
 shape = SubResource("CapsuleShape2D_g2u8i")
 debug_color = Color(0.75745, 0.454324, 5.77569e-07, 0.42)
@@ -212,6 +213,7 @@ visible = false
 shape = SubResource("CircleShape2D_jmwgi")
 
 [node name="Enemy Hit Box" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy Hit Box"]
 position = Vector2(0, -3)

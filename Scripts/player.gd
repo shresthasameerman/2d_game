@@ -19,6 +19,12 @@ var Enemy_attack_cooldown = true
 var attack_IP = false
 var start_position: Vector2
 
+func health_max():
+	return 200   # or whatever your max health is
+
+func health_min():
+	return 0     # or whatever your min health is
+
 func _ready():
 	add_to_group("player")
 	attack_cooldown.connect("timeout", Callable(self, "_on_attack_cooldown_timeout"))

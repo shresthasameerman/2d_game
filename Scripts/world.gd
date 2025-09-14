@@ -26,6 +26,6 @@ func _on_area_2d_body_entered(body: Node) -> void:
 		change_scene()
 
 func change_scene():
-	if Global.current_scene == "cliffside":
-		get_tree().change_scene_to_file("res://Scenes/world.tscn")
+	if Global.current_scene == "world":
+		get_tree().change_scene_to_file("res://Scenes/cliffside.tscn")
 		Global.finish_changing_scene()
