@@ -536,6 +536,10 @@ limit_bottom = 520
 [node name="AttackCooldownTimerPlayer" type="Timer" parent="."]
 wait_time = 0.5
 
+[node name="HealthRegenTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [node name="Healthbar" parent="." instance=ExtResource("5_fkybt")]
 offset_left = -8.0
 offset_top = -26.0
